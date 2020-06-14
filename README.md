@@ -19,9 +19,11 @@ The API here is low-level,internal, and hidden from most applications and users 
 
 The concepts are: 
 
-  * There are TYPES of actors that have surfaces of named doubles.
-  * The named doubles can be observations or derived - derived doubles' processing is defined by the OPERATOR 
-  * each actor knows its parent and children automatically (via actor runtime / supervision)
+  * Types of actors that have surfaces of named doubles.  Types must be created before instantiation of instances via the TYPE API.
+  * The named doubles can be observations or derived - derived doubles' processing is defined by the OPERATOR API.
+  * DTs are instances of TYPES created with the ACTOR API.
+  * Each actor knows its parent and children automatically (via actor runtime / supervision)
+  * The LINK API turns the tree of actor instances into a graph.  Once a link is created an aggregate actor can see the changes to state of the linked actor at a specified granularity.  IE: a factory plant actor can see the changes to state of cars it manufactured at a certain level of granularity, ie: daily. (THIS NEEDS SOME THOUGHT but I'm guessing the changes that are visible via subscription include child actor creation - once the aggregate actor is created it will continue to get all the info it needs to watch the evolving system and create new aggregates to watch new sections of the graph.)
 
 ### TYPE API
 
