@@ -14,7 +14,7 @@ object Main extends LazyLogging with JsonSupport with HttpSupport {
 
   def main(args: Array[String]) {
 
-    implicit val system: ActorSystem = ActorSystem("LotsOfNamesApi-system")
+    implicit val system: ActorSystem = ActorSystem("DtLab-system")
     implicit val materializer: ActorMaterializer = ActorMaterializer()
     implicit val executionContext: ExecutionContextExecutor = system.dispatcher
 
