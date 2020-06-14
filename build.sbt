@@ -1,8 +1,8 @@
 name := "DtLab"
 organization := "org.somind"
-javacOptions ++= Seq("-source", "1.13", "-target", "1.13") 
+javacOptions ++= Seq("-source", "1.11", "-target", "1.11") 
 scalacOptions ++= Seq(
-  "-target:jvm-1.12"
+  "-target:jvm-1.8"
 )
 fork := true
 javaOptions in test ++= Seq(
