@@ -10,7 +10,7 @@
 Each repo has the service name, the computer language implementation, and the release name.  The initial
 release names are animals in alphabetic order (open to better names).  The idea is that a
 newer incompatible approach to the service implementation can fork off without the overhead of a git fork.
-*See Hickey on semantic versioning (if it is not backward compatible, rename it.)*
+*See Hickey on semantic versioning "If it is not backward compatible, rename it."*
 
 # Design
 
