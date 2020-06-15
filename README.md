@@ -70,6 +70,7 @@ POST /schema/location/store
   
   * Defines how derived values are created.
   * Configuring an actor with a DSL/builtin-func and flag indicating eager or lazy (just-in-time vs always correct) execution - open to expressing in Python, R, etc...
+  * Operators will be infinitely powerful in that they can draw on higher level APIs above the kernel APIs - an operator could "search" for example.
 
   TODO:
 
@@ -84,7 +85,7 @@ POST /schema/location/store
   * creates/updates that have only 1 field whose value affects another field via operator triggers recalc of eager operators.
   * query actor state with `/root/<ns.type>/<id>/<ns.type>id/<id>`
   * query actor child name list with `/root/<ns.type>/<id>/<ns.type>id/<id>/children`
-  * NOTE, search the actor space is a higher level application
+  * NOTE, search the actor space is a higher level application and not implemented in the kernel
 
 ```
 ns is location
