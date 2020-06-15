@@ -19,15 +19,17 @@ The API here is low-level,internal, and hidden from most applications and users 
 
 The concepts are: 
 
-  * Types of actors that have surfaces of named doubles.  Types must be created before instantiation of instances via the TYPE API.
-  * The named doubles can be observations or derived - derived doubles' processing is defined by the OPERATOR API.
+  * Types are collections of named doubles.  Types must be defined before instantiation of instances.
+  * The named doubles can be observations or derived (ie: a quality value based on 1 or more current attributes (named doubles) and may need the previous values of those attributes)
+  * Derived doubles' processing is defined by the OPERATOR API.
   * DTs are instances of TYPES created with the ACTOR API.
   * Each actor knows its parent and children automatically (via actor runtime / supervision)
-  * The LINK API turns the tree of actor instances into a graph.  Once a link is created an aggregate actor can see the changes to state of the linked actor at a specified granularity.  IE: a factory plant actor can see the changes to state of cars it manufactured at a certain level of granularity, ie: daily. (THIS NEEDS SOME THOUGHT but I'm guessing the changes that are visible via subscription include child actor creation - once the aggregate actor is created it will continue to get all the info it needs to watch the evolving system and create new aggregates to watch new sections of the graph.)
+  * The LINK API turns the tree of actor instances into a graph.  Once a link is created a linked actor can see the changes to state of the other actor at a specified granularity.  IE: a factory plant actor can see the changes to the state of cars it manufactured at a certain level of granularity, ie: daily. (THIS NEEDS SOME THOUGHT but the changes that are visible via subscription include child actor creation.  Once the aggregate actor (linked actor) is created it will continue to get all the info it needs to watch the evolving system and create new aggregates to watch new sections of the graph.)  
+  * Links are influenced by prototype-based-programming.
 
 ### TYPE API
 
-api post schemas (ns, type name, and list of attr names whose values are all doubles)
+HTTP POST of schemas (ns, type name, and list of attr names whose values are all doubles)
   
   * name is not a path, nothing says where this hangs in the graph - ns is just to manage collisions, global to system
   * all values are doubles (so far)
@@ -45,7 +47,10 @@ POST /schema/location/store
 
 ### OPERATOR API
   
-  * api will define how derived values are created.  Configuring an actor with a DSL/builtin-func and flag indicating eager or lazy (just-in-time vs always correct) execution - open to expressing in Python, R, etc...
+  * Defines how derived values are created.
+  * Configuring an actor with a DSL/builtin-func and flag indicating eager or lazy (just-in-time vs always correct) execution - open to expressing in Python, R, etc...
+
+  TODO:
 
   TODO:
 
@@ -72,5 +77,7 @@ POST /actor/location.store/4200
 ```
 
 ### LINK API
+
+SEE PROTOTYPE BASED PROGRAMMING - links are made to objects, not types
 
 this is the least worked out but is needed to support a graph and dynamic aggregates and fusion
