@@ -12,6 +12,15 @@ release names are animals in alphabetic order (open to better names).  The idea 
 newer incompatible approach to the service implementation can fork off without the overhead of a git fork.
 *See Hickey on semantic versioning "If it is not backward compatible, rename it."*
 
+# RUNTIME
+
+  * Akka typed actors
+  * Event-sourcing persistence
+    * snapshotting meta (prop names) and current state
+    * journaling of input (only tuples of (key: Int, value: double), one at a time)
+  * Akka HTTP REST-like API
+  * Kubernetes via CI/CD via Github Actions
+
 # Design
 
 ## API
