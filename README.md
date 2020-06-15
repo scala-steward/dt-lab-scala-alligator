@@ -114,3 +114,11 @@ TODO:
 
 TODO:
 
+
+# NOTES
+
+* why not call the ACTOR API the DT API?  will actors always be DTs?  maybe not...
+* TYPE might not be the best name for what is really an ordered list of attr names.  Suggestions?
+* OPERATOR might not be the best name for what is really event handlers, analogous to RD stored-proc stuff
+
+
