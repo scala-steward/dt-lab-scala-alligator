@@ -6,7 +6,7 @@ import akka.http.scaladsl.server.Directives._
 import akka.stream.ActorMaterializer
 import com.typesafe.scalalogging.LazyLogging
 import somind.dtlab.models.JsonSupport
-import somind.dtlab.routes.{NamesRoute, NamesSegmentRoute}
+import somind.dtlab.routes._
 
 import scala.concurrent.ExecutionContextExecutor
 
@@ -20,8 +20,10 @@ object Main extends LazyLogging with JsonSupport with HttpSupport {
 
     val route =
       HealthCheck ~
-      NamesRoute.apply ~
-      NamesSegmentRoute.apply
+      ActorApiRoute.apply ~
+      OperatorApiRoute.apply ~
+      LinkApiRoute.apply ~
+      TypeApiRoute.apply
 
     Http().bindAndHandle(route, "0.0.0.0", port)
   }

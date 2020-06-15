@@ -11,7 +11,7 @@ import somind.dtlab.HttpSupport
 import somind.dtlab.models._
 import tech.navicore.lotsofnames.LotsOfPeople
 
-object NamesRoute
+object ActorApiRoute
     extends JsonSupport
     with LazyLogging
     with Directives

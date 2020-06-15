@@ -15,11 +15,16 @@
 TYPE OPERATOR ACTOR LINK
 ```
 
-The API here is low-level,internal, and hidden from most applications and users behind higher level APIs (graphql) and tooling.
+This is the kernel of the DTLab.
+
+It is low-level,internal, and hidden from most applications and users behind higher level APIs (graphql) and tooling.
+
+It does not prepare data from raw telemetry or do any data transformation - telemetry preprocessing is a higher level application.
 
 The concepts are: 
 
-  * Types are collections of named doubles.  Types must be defined before instantiation of instances.
+  * Types are collections of named doubles.  
+  * Types must be defined before instantiation of instances.
   * The named doubles can be observations or derived (ie: a quality value based on 1 or more current attributes (named doubles) and may need the previous values of those attributes)
   * Derived doubles' processing is defined by the OPERATOR API.
   * DTs are instances of TYPES created with the ACTOR API.
