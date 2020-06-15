@@ -7,6 +7,11 @@
 
 ## Under Construction
 
+Each repo has the service name, the computer language implementation, and the release name.  The initial
+release names are animals in alphabetic order (open to better names).  The idea is that a
+newer incompatible approach to the service implementation can fork off without the overhead of a git fork.
+*(See Hickey on semantic versioning (if it is not backward compatible, rename it.)*
+
 # Design
 
 ## API
@@ -14,6 +19,7 @@
 ```
 TYPE OPERATOR ACTOR LINK
 ```
+*NOTE, only the TYPE API and the ACTOR API will probably be coded in release Alligator*
 
 This is the kernel of the DTLab.
 
