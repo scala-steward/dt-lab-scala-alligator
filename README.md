@@ -2,6 +2,11 @@
 
 # Digital Twin Lab - Alligator Version
 
+The DtLab is a distributed programmable actor runtime environment.
+
+  * optimized to enable graphs of digital twins 
+  * for IOT and non-IOT applications (neural nets, etc...)
+  * programmable via API (cURL)
 
 ## Under Construction
 
