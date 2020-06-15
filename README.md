@@ -21,6 +21,12 @@ release names are animals in alphabetic order (open to better names).  The idea 
 newer incompatible approach to the service implementation can fork off without the overhead of a git fork.
 *See Hickey on semantic versioning "If it is not backward compatible, rename it."*
 
+```
+<projectName>-<langName>-<versionName>
+
+eg: dt-lab-scala-alligator (note: probably should not name projects with hyphens :)
+```
+
 The build system is (will be) opinionated lint-enabled, `scalafmt` with code stats reports.
 
 API is understood best by reading the tests in `src/scala/test`.
