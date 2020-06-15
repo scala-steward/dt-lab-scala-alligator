@@ -24,7 +24,7 @@ newer incompatible approach to the service implementation can fork off without t
 ```
 <projectName>-<langName>-<versionName>
 
-eg: dt-lab-scala-alligator (note: probably should not name projects with hyphens :)
+eg: dt-lab-scala-alligator (note: probably should not name projects with hyphens)
 ```
 
 The build system is (will be) opinionated lint-enabled, `scalafmt` with code stats reports.
