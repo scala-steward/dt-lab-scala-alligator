@@ -19,7 +19,7 @@ newer incompatible approach to the service implementation can fork off without t
 ```
 TYPE OPERATOR ACTOR LINK
 ```
-*NOTE, only the TYPE API and the ACTOR API will probably be coded in release Alligator*
+*NOTE, only the TYPE API and the ACTOR API will probably be coded in Alligator*
 
 This is the kernel of the DTLab.
 
