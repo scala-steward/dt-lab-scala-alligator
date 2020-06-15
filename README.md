@@ -22,6 +22,7 @@ newer incompatible approach to the service implementation can fork off without t
     * journaling of input - only tuples of (key: Int, value: double), one at a time
   * Akka HTTP REST-like API
   * Kubernetes via CI/CD via Github Actions
+  * Monitoring is via Prometheus via `/health` endpoint in each container - same endpoint k8s uses for liveliness/healthcheck probes
 
 # Design
 
