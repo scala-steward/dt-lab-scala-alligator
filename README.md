@@ -67,7 +67,7 @@ POST /schema/location/store
   * creates/updates that have only 1 field will only update that 1 field - supporting telemetry from different sources and late reporters.
   * creates/updates that have only 1 field whose value affects another field via operator triggers recalc of eager operators.
   * query actor state with /root/<ns.type>/<id>/<ns.type>id/<id>
-  * query actor child name list with /root/<ns.type>/<id>/<ns.type>id/<id>/children
+  * query actor child name list with `/root/<ns.type>/<id>/<ns.type>id/<id>/children`
   * NOTE, search the actor space is a higher level application
 
 ```
