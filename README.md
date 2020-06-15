@@ -88,4 +88,9 @@ POST /actor/location.store/4200
 
 SEE PROTOTYPE BASED PROGRAMMING - links are made to objects, not types
 
-this is the least worked out but is needed to support a graph and dynamic aggregates and fusion
+**this is the least worked out but is needed to support a graph and dynamic aggregates and fusion**
+
+TODO:
+
+TODO:
+
