@@ -17,7 +17,7 @@ newer incompatible approach to the service implementation can fork off without t
   * Akka typed actors
   * Event-sourcing persistence
     * snapshotting meta (prop names) and current state
-    * journaling of input (only tuples of (key: Int, value: double), one at a time)
+    * journaling of input - only tuples of (key: Int, value: double), one at a time
   * Akka HTTP REST-like API
   * Kubernetes via CI/CD via Github Actions
 
