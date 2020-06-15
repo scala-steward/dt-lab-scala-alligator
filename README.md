@@ -1,3 +1,5 @@
+![Scala CI](https://github.com/SoMinds/dt-lab-scala-alligator/workflows/Scala%20CI/badge.svg)
+
 # Digital Twin Lab - Alligator Version
 
 
