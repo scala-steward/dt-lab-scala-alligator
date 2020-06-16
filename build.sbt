@@ -49,9 +49,8 @@ libraryDependencies ++=
     "com.typesafe.akka" %% "akka-http" % akkaHttpVersion,
     "com.typesafe.akka" %% "akka-http-spray-json" % akkaHttpVersion,
     "org.json4s" %% "json4s-native" % "3.6.1",
-    "com.github.nscala-time" %% "nscala-time" % "2.20.0",
     "org.scalatest" %% "scalatest" % "3.0.8" % "test"
-
+    "com.github.nscala-time" %% "nscala-time" % "2.24.0",
   )
 
 assemblyJarName in assembly := s"${name.value}-${version.value}.jar"
