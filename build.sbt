@@ -38,7 +38,7 @@ inThisBuild(List(
 libraryDependencies ++=
   Seq(
 
-    "ch.megard" %% "akka-http-cors" % "0.4.3",
+    "ch.megard" %% "akka-http-cors" % "1.0.0",
     "ch.qos.logback" % "logback-classic" % "1.2.3",
     "com.typesafe" % "config" % "1.3.4",
     "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2",
