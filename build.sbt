@@ -43,7 +43,7 @@ libraryDependencies ++=
     "ch.qos.logback" % "logback-classic" % "1.2.3",
     "com.typesafe" % "config" % "1.4.0",
     "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2",
-    "tech.navicore" %% "lotsofnames" % "1.1.0",
+    "tech.navicore" %% "lotsofnames" % "2.0.0",
     "com.typesafe.akka" %% "akka-actor" % akkaVersion,
     "com.typesafe.akka" %% "akka-stream" % akkaVersion,
     "com.typesafe.akka" %% "akka-cluster" % akkaVersion,
@@ -51,7 +51,7 @@ libraryDependencies ++=
     "com.typesafe.akka" %% "akka-http-spray-json" % akkaHttpVersion,
     "org.json4s" %% "json4s-native" % "3.6.9",
     "com.github.nscala-time" %% "nscala-time" % "2.24.0",
-    "org.scalatest" %% "scalatest" % "3.1.2" % "test"
+    "org.scalatest" %% "scalatest" % "3.2.0" % "test"
   )
 
 assemblyJarName in assembly := s"${name.value}-${version.value}.jar"
