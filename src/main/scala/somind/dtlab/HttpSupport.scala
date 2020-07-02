@@ -5,7 +5,7 @@ import java.io.IOException
 import akka.http.scaladsl.model._
 import akka.http.scaladsl.model.headers.HttpOrigin
 import akka.http.scaladsl.server.Directives._
-import akka.http.scaladsl.server.{Directive, ExceptionHandler, RejectionHandler, Route}
+import akka.http.scaladsl.server._
 import ch.megard.akka.http.cors.scaladsl.CorsDirectives._
 import ch.megard.akka.http.cors.scaladsl.model.HttpOriginMatcher
 import ch.megard.akka.http.cors.scaladsl.settings.CorsSettings
@@ -46,12 +46,5 @@ trait HttpSupport extends LazyLogging {
   val handleErrors
     : Directive[Unit] = handleRejections(rejectionHandler) & handleExceptions(
     exceptionHandler)
-
-  def HealthCheck: Route =
-    path("healthcheck") {
-      get {
-        complete("ok")
-      }
-    }
 
 }

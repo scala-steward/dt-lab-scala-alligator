@@ -9,4 +9,8 @@ final case class Name (
     name: String
 )
 
+final case class DtType (
+    attributes: List[String]
+)
+
 final case class Query(sourceId: String)

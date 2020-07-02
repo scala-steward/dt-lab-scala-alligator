@@ -38,6 +38,7 @@ inThisBuild(List(
 libraryDependencies ++=
   Seq(
 
+    "tech.navicore" %% "navipath" % "4.0.1",
     "ch.megard" %% "akka-http-cors" % "1.0.0",
     "ch.qos.logback" % "logback-classic" % "1.2.3",
     "com.typesafe" % "config" % "1.4.0",

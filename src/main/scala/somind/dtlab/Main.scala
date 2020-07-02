@@ -1,29 +1,23 @@
 package somind.dtlab
 
-import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.server.Directives._
-import akka.stream.ActorMaterializer
 import com.typesafe.scalalogging.LazyLogging
 import somind.dtlab.models.JsonSupport
 import somind.dtlab.routes._
-
-import scala.concurrent.ExecutionContextExecutor
+import Conf._
+import somind.dtlab.observe.ObserverRoute
 
 object Main extends LazyLogging with JsonSupport with HttpSupport {
 
   def main(args: Array[String]) {
 
-    implicit val system: ActorSystem = ActorSystem("DtLab-system")
-    implicit val materializer: ActorMaterializer = ActorMaterializer()
-    implicit val executionContext: ExecutionContextExecutor = system.dispatcher
-
     val route =
-      HealthCheck ~
+      ObserverRoute.apply  ~
+      TypeApiRoute.apply ~
       ActorApiRoute.apply ~
       OperatorApiRoute.apply ~
-      LinkApiRoute.apply ~
-      TypeApiRoute.apply
+      LinkApiRoute.apply
 
     Http().bindAndHandle(route, "0.0.0.0", port)
   }
