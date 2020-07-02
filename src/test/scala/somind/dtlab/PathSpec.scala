@@ -1,12 +1,15 @@
 package somind.dtlab
 
 import java.io.InputStream
+
 import org.scalatest._
 import matchers._
+
 import scala.io.Source
 import navicore.data.navipath.dsl.NaviPathSyntax._
+import org.scalatest.flatspec.AnyFlatSpec
 
-class PathSpec extends FlatSpec with should.Matchers {
+class PathSpec extends AnyFlatSpec with should.Matchers {
 
   val stream: InputStream = getClass.getResourceAsStream("/my.json")
   val jsonString: String = Source.fromInputStream(stream).mkString
