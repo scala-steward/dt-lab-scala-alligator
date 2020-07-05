@@ -19,15 +19,10 @@ object ActorApiRoute
         handleErrors {
           cors(corsSettings) {
             get {
-              logger.debug(s"get $urlpath")
-              complete(
-                HttpEntity(ContentTypes.`application/json`,
-                           "{\"msg\": \"Say hello to Lots of Names API\"}\n"))
+              complete(StatusCodes.NotImplemented)
             } ~
               post {
-                decodeRequest {
-                  complete(StatusCodes.NotImplemented)
-                }
+                complete(StatusCodes.NotImplemented)
               }
 
           }

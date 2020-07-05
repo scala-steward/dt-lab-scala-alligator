@@ -1,6 +1,8 @@
 package somind.dtlab.models
 
+import java.time.{ZoneOffset, ZonedDateTime}
 import java.util.{Date, UUID}
+
 import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport
 import spray.json._
 
@@ -42,7 +44,19 @@ trait JsonSupport extends SprayJsonSupport with DefaultJsonProtocol {
     }
   }
 
-  implicit val nFormat: RootJsonFormat[Name] = jsonFormat4(Name)
-  implicit val dttFormat: RootJsonFormat[DtType] = jsonFormat1(DtType)
-  implicit val qFormat: RootJsonFormat[Query] = jsonFormat1(Query)
+  implicit object ZonedDateTime extends JsonFormat[ZonedDateTime] {
+    def write(dt: ZonedDateTime): JsValue =
+      JsString(get8601(new Date(dt.toInstant.toEpochMilli))) // ugh.  replace SimpleDateFormat with new java.time.* stuff
+    def read(value: JsValue): ZonedDateTime = {
+      value match {
+        case JsString(dt) =>
+          java.time.ZonedDateTime
+            .ofInstant(parse8601(dt).toInstant, ZoneOffset.UTC)
+        case _ => throw DeserializationException("Expected 8601")
+      }
+    }
+  }
+  //implicit val nFormat: RootJsonFormat[Name] = jsonFormat4(Name)
+  implicit val dttFormat: RootJsonFormat[DtType] = jsonFormat3(DtType)
+  //implicit val qFormat: RootJsonFormat[Query] = jsonFormat1(Query)
 }
