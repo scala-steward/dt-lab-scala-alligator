@@ -28,6 +28,9 @@ object TypeApiRoute
                   Observer("type_route_get_success")
                   complete(HttpEntity(ContentTypes.`application/json`,
                                       currentType.toJson.prettyPrint))
+                case None =>
+                  Observer("type_route_get_notfound")
+                  complete(StatusCodes.NotFound)
                 case e =>
                   Observer("type_route_get_unk_err")
                   logger.warn(s"unable to handle: $e")
