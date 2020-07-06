@@ -2,10 +2,15 @@ name: Scala CI
 
 on:
   push:
-    branches: [ master ]
-    tags: [ master ]
+    branches: 
+    - master
+    tags:
+    - v0.*
+    - v1.*
+    - v2.*
   pull_request:
-    branches: [ master ]
+    branches: 
+    - master
 
 jobs:
   build:
