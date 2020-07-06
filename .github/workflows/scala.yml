@@ -3,6 +3,7 @@ name: Scala CI
 on:
   push:
     branches: [ master ]
+    tags: [ master ]
   pull_request:
     branches: [ master ]
 
